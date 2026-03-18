@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>助成金簡易診断 | ウエストパーク社労士事務所</title>
+    <meta name="description" content="3分でわかる助成金簡易診断。御社で活用できる助成金と概算額を無料で診断します。">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+    <meta property="og:title" content="助成金簡易診断 | ウエストパーク社労士事務所">
+    <meta property="og:description" content="3分でわかる助成金簡易診断。御社で活用できる助成金と概算額を無料で診断します。">
+    <meta property="og:image" content="https://hirokitakamura.github.io/WestPark-website/images/ogp.png">
+    <meta property="og:url" content="https://hirokitakamura.github.io/WestPark-website/diagnosis.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#3b82f6',
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+        <div class="p-6 border-b border-gray-200">
+            <a href="index.html"><img src="images/logo-sidebar.png" alt="ウエストパーク社労士事務所" class="w-full h-auto"></a>
+        </div>
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li><a href="index.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">ホーム</a></li>
+                <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金申請サポート</a></li>
+                <li><a href="subsidies.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">DX導入支援</a></li>
+                <li><a href="about.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">代表紹介</a></li>
+                <li><a href="pricing.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">料金案内</a></li>
+                <li><a href="faq.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">よくある質問</a></li>
+                <li><a href="contact.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">無料相談・お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <main class="lg:ml-64">
+        <section class="bg-primary text-white py-12">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold">助成金簡易診断</h2>
+                <p class="mt-4 text-lg">3分で御社に合った助成金がわかります</p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="bg-accent/10 border-2 border-accent rounded-lg p-8 mb-8">
+                    <div class="text-5xl mb-4">🔍</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">助成金簡易診断ツール</h3>
+                    <p class="text-gray-700 mb-2">現在、診断ツールを準備中です。</p>
+                    <p class="text-gray-700 mb-6">公開までもうしばらくお待ちください。</p>
+                    <p class="text-gray-600 text-sm">簡単な質問に答えるだけで、御社で活用できる助成金と概算額がわかる診断ツールを開発中です。</p>
+                </div>
+
+                <div class="bg-blue-50 rounded-lg p-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">今すぐ知りたい方は、無料相談をご利用ください</h3>
+                    <p class="text-gray-700 mb-6">「うちでも使える助成金はある？」——そんな素朴な疑問から、専門の社労士が丁寧にお答えします。</p>
+                    <a href="contact.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold text-lg transition shadow-lg">
+                        無料相談を予約する
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-8 border-t border-gray-200 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center"><p class="text-sm text-gray-500">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p></div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        sidebarToggle.addEventListener('click', () => { sidebar.classList.toggle('-translate-x-full'); overlay.classList.toggle('hidden'); });
+        overlay.addEventListener('click', () => { sidebar.classList.add('-translate-x-full'); overlay.classList.add('hidden'); });
+    </script>
+</body>
+</html>

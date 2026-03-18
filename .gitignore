@@ -30,3 +30,6 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.temp
+
+# 営業資料（非公開）
+20260318_NEW/

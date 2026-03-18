@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>助成金情報 | ウエストパーク社労士事務所</title>
-    <meta name="description" content="DX推進に活用できる助成金情報。業務改善助成金、人材開発支援助成金など、企業の成長を支援する制度をご紹介します。">
+    <title>DX導入支援 | ウエストパーク社労士事務所 | 福岡・北九州</title>
+    <meta name="description" content="助成金を活用したDXツールの選定・導入支援。勤怠管理、給与計算、業務効率化を実現。建設・不動産業界にも対応。福岡・北九州の社労士事務所。">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 
-    <!-- OGP Tags -->
-    <meta property="og:title" content="助成金情報 | ウエストパーク社労士事務所">
-    <meta property="og:description" content="DX推進に活用できる助成金情報。業務改善助成金、人材開発支援助成金など、企業の成長を支援する制度をご紹介します。">
+    <meta property="og:title" content="DX導入支援 | ウエストパーク社労士事務所">
+    <meta property="og:description" content="助成金を活用したDXツールの選定・導入支援。建設・不動産業界にも対応。福岡・北九州の社労士事務所。">
     <meta property="og:image" content="https://hirokitakamura.github.io/WestPark-website/images/ogp.png">
     <meta property="og:url" content="https://hirokitakamura.github.io/WestPark-website/subsidies.html">
     <meta property="og:type" content="website">
@@ -33,333 +31,184 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <!-- モバイルメニューボタン（固定） -->
     <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
     </button>
 
-    <!-- サイドバー -->
     <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
-        <!-- ロゴ -->
         <div class="p-6 border-b border-gray-200">
-            <a href="index.html">
-                <img src="images/logo-sidebar.png" alt="ウエストパーク社労士事務所" class="w-full h-auto">
-            </a>
+            <a href="index.html"><img src="images/logo-sidebar.png" alt="ウエストパーク社労士事務所" class="w-full h-auto"></a>
         </div>
-
-        <!-- ナビゲーション -->
         <nav class="p-4">
             <ul class="space-y-2">
                 <li><a href="index.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">ホーム</a></li>
-                <li><a href="about.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">事務所案内</a></li>
-                <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">業務内容</a></li>
+                <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金申請サポート</a></li>
+                <li><a href="subsidies.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">DX導入支援</a></li>
+                <li><a href="about.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">代表紹介</a></li>
                 <li><a href="pricing.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">料金案内</a></li>
-                <li><a href="subsidies.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">助成金情報</a></li>
                 <li><a href="faq.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">よくある質問</a></li>
-                <li><a href="contact.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">お問い合わせ</a></li>
+                <li><a href="contact.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">無料相談・お問い合わせ</a></li>
             </ul>
         </nav>
-
-        <!-- ページ内目次 -->
         <div class="p-4 border-t border-gray-200">
             <h3 class="text-sm font-bold text-gray-600 mb-3">このページの内容</h3>
             <ul class="space-y-1 text-sm">
-                <li><a href="#about" class="block px-2 py-1 text-gray-600 hover:text-primary transition">助成金とは</a></li>
-                <li><a href="#features" class="block px-2 py-1 text-gray-600 hover:text-primary transition">申請代行の特徴</a></li>
-                <li><a href="#list" class="block px-2 py-1 text-gray-600 hover:text-primary transition">取り扱い助成金</a></li>
-                <li><a href="#flow" class="block px-2 py-1 text-gray-600 hover:text-primary transition">申請の流れ</a></li>
+                <li><a href="#dx-examples" class="block px-2 py-1 text-gray-600 hover:text-primary transition">DX導入の例</a></li>
+                <li><a href="#construction" class="block px-2 py-1 text-gray-600 hover:text-primary transition">建設・不動産業の方へ</a></li>
+                <li><a href="#dx-flow" class="block px-2 py-1 text-gray-600 hover:text-primary transition">導入の流れ</a></li>
             </ul>
         </div>
     </aside>
 
-    <!-- オーバーレイ（モバイル時） -->
     <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
 
-    <!-- メインコンテンツ -->
     <main class="lg:ml-64">
-        <!-- ページタイトル -->
         <section class="bg-primary text-white py-12">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold">DXサポート特化型の助成金</h2>
-                <p class="mt-4 text-lg">企業の成長を支援する、返済不要の公的資金を活用しましょう</p>
+                <h2 class="text-3xl sm:text-4xl font-bold">DX導入支援</h2>
+                <p class="mt-4 text-lg">助成金を活用して、業務のデジタル化を実現</p>
             </div>
         </section>
 
-        <!-- イントロダクション -->
         <section class="py-12 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、中小企業の助成金申請代行を中心に、特にDX推進に関連する助成金のご提案と申請支援を専門に行っています。助成金は、厚生労働省が所管する「事業主のための雇用関係助成金」が代表的で、主に雇用機会の拡大や労働者の能力開発に対して支給される返済不要の公的資金です。</p>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-lg text-gray-700 leading-relaxed">DXは大企業だけのものではありません。中小企業こそ、少しの業務改善が大きな成果に直結します。</p>
+                <p class="text-lg text-gray-700 leading-relaxed mt-4">助成金を活用すれば、導入コストの大部分をカバーできます。</p>
             </div>
         </section>
 
-        <!-- 助成金とは -->
-        <section id="about" class="py-16 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-2xl font-bold text-primary mb-8 text-center">助成金とは</h3>
-
-                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-                    <p class="text-gray-700 text-center mb-6 text-lg">事業主が取り組む雇用や人材育成に関する施策に対し、国が費用の一部を助成する制度です。</p>
-
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-blue-50 p-6 rounded-lg text-center">
-                            <div class="text-4xl mb-3">✓</div>
-                            <h4 class="font-bold text-primary mb-2">要件を満たせば必ず受給可能</h4>
-                            <p class="text-sm text-gray-600">審査はあるものの、条件クリアで受給できます</p>
-                        </div>
-
-                        <div class="bg-blue-50 p-6 rounded-lg text-center">
-                            <div class="text-4xl mb-3">💡</div>
-                            <h4 class="font-bold text-primary mb-2">雇用や従業員のニーズにマッチ</h4>
-                            <p class="text-sm text-gray-600">人材育成や職場環境改善に活用できます</p>
-                        </div>
-
-                        <div class="bg-blue-50 p-6 rounded-lg text-center">
-                            <div class="text-4xl mb-3">💰</div>
-                            <h4 class="font-bold text-primary mb-2">返済不要で資金使途に制限なし</h4>
-                            <p class="text-sm text-gray-600">受給後は自由に使える資金です</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 助成金申請代行の特徴 -->
-        <section id="features" class="py-16 bg-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-2xl font-bold text-primary mb-8 text-center">助成金申請代行の特徴</h3>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">1</div>
-                            <h4 class="text-xl font-bold text-gray-800">相談無料・着手金ゼロ</h4>
-                        </div>
-                        <p class="text-gray-700">初期費用は一切不要。まずはお気軽にご相談ください。</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">2</div>
-                            <h4 class="text-xl font-bold text-gray-800">代行報酬は助成金額の20%</h4>
-                        </div>
-                        <p class="text-gray-700">顧問契約の場合は割引あり（15%）。明瞭な料金体系です。</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">3</div>
-                            <h4 class="text-xl font-bold text-gray-800">受給リスクゼロの安心サポート</h4>
-                        </div>
-                        <p class="text-gray-700">豊富な経験で申請をサポート。ミスや漏れを防ぎます。</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">4</div>
-                            <h4 class="text-xl font-bold text-gray-800">助成金受給後に報酬請求</h4>
-                        </div>
-                        <p class="text-gray-700">前金なし、完全成功報酬型で安心してご依頼いただけます。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 取り扱い助成金一覧 -->
-        <section id="list" class="py-16 bg-gray-50">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-2xl font-bold text-primary mb-8 text-center">取り扱い助成金一覧</h3>
-
-                <!-- 業務改善助成金 -->
-                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-                    <div class="flex items-center mb-6">
-                        <div class="text-4xl mr-4">🏭</div>
-                        <h4 class="text-2xl font-bold text-primary">業務改善助成金</h4>
-                    </div>
-
-                    <p class="text-gray-700 mb-6">企業の業務生産性向上を目的とした設備投資やシステム導入に加え、事業場内最低賃金を一定額以上引き上げた場合に、その経費の一部を助成します。</p>
-
-                    <div class="bg-blue-50 p-6 rounded-lg mb-4">
-                        <h5 class="font-bold text-gray-800 mb-3">対象となる取り組み例</h5>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>勤怠管理システムの導入</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>給与計算ソフトの導入</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>業務効率化のためのIT機器・ソフトウェアの購入</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>省力化機械設備の導入</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="border-l-4 border-accent pl-4">
-                        <p class="text-sm text-gray-700"><strong>ポイント：</strong>この助成金は、DXツールやIT機器の導入など生産性革新に直接結びつく投資に活用され、多くの中小企業が利用可能なものです。</p>
-                    </div>
-                </div>
-
-                <!-- 人材開発支援助成金 -->
-                <div class="bg-white rounded-lg shadow-md p-8">
-                    <div class="flex items-center mb-6">
-                        <div class="text-4xl mr-4">👥</div>
-                        <h4 class="text-2xl font-bold text-primary">人材開発支援助成金</h4>
-                    </div>
-
-                    <p class="text-gray-700 mb-6">従業員の能力開発や教育訓練に対する助成金で、以下のような施策が対象となります。</p>
-
-                    <div class="bg-blue-50 p-6 rounded-lg mb-4">
-                        <h5 class="font-bold text-gray-800 mb-3">対象となる取り組み例</h5>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>新入社員研修やスキルアップ講座の実施</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>ITやDX推進に必要な知識・技術の習得支援</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>eラーニング導入など教育環境の整備</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-secondary mr-2">•</span>
-                                <span>資格取得支援や専門研修の受講</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="border-l-4 border-accent pl-4">
-                        <p class="text-sm text-gray-700"><strong>ポイント：</strong>人材の成長を促すことで企業競争力を高め、将来的なDX実現の基盤強化にもつながります。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 助成金申請の流れ -->
-        <section id="flow" class="py-16 bg-white">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h3 class="text-2xl font-bold text-primary mb-12 text-center">助成金申請の流れ</h3>
-
-                <div class="max-w-3xl mx-auto">
-                    <!-- ステップ1 -->
-                    <div class="relative pl-8 pb-12 border-l-2 border-secondary">
-                        <div class="absolute -left-4 top-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
-                        <div class="ml-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2">お問い合わせ</h4>
-                            <p class="text-gray-700 mb-3">ご相談は無料です。電話またはメールでお気軽にご連絡ください。</p>
-                        </div>
-                    </div>
-
-                    <!-- ステップ2 -->
-                    <div class="relative pl-8 pb-12 border-l-2 border-secondary">
-                        <div class="absolute -left-4 top-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
-                        <div class="ml-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2">お申し込み・契約</h4>
-                            <p class="text-gray-700">申請書類の作成、行政機関への申請や折衝をすべて代行。お客様は本業に専念していただけます。</p>
-                        </div>
-                    </div>
-
-                    <!-- ステップ3 -->
-                    <div class="relative pl-8 pb-12 border-l-2 border-secondary">
-                        <div class="absolute -left-4 top-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
-                        <div class="ml-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2">行政審査</h4>
-                            <p class="text-gray-700">行政機関による書類審査があります。追加書類の提出が必要な場合はご相談のうえ対応します。</p>
-                        </div>
-                    </div>
-
-                    <!-- ステップ4 -->
-                    <div class="relative pl-8 pb-12 border-l-2 border-secondary">
-                        <div class="absolute -left-4 top-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</div>
-                        <div class="ml-6">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2">助成金受給</h4>
-                            <p class="text-gray-700">助成金が指定口座へ入金されます。受給確定後、お客様へご連絡いたします。</p>
-                        </div>
-                    </div>
-
-                    <!-- ステップ5（最後なのでborder-lなし） -->
-                    <div class="relative pl-8">
-                        <div class="absolute -left-4 top-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">5</div>
-                        <div class="ml-6 bg-yellow-50 p-6 rounded-lg border-2 border-accent">
-                            <h4 class="text-xl font-bold text-gray-800 mb-2">代行報酬のご請求</h4>
-                            <p class="text-gray-700 mb-4">助成金が入金後、代行報酬を請求いたします。</p>
-                            <div class="bg-white p-4 rounded-lg">
-                                <p class="font-bold text-gray-800 mb-2">申請代行報酬</p>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li class="flex justify-between">
-                                        <span>顧問契約なし：</span>
-                                        <span class="font-bold text-accent">助成金の30%（最低10万円～）</span>
-                                    </li>
-                                    <li class="flex justify-between">
-                                        <span>相談顧問契約：</span>
-                                        <span class="font-bold text-accent">助成金の20%</span>
-                                    </li>
-                                    <li class="flex justify-between">
-                                        <span>総合顧問契約：</span>
-                                        <span class="font-bold text-accent">助成金の15%</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- まとめ -->
-        <section class="py-12 bg-gray-50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p class="text-lg text-gray-700 leading-relaxed">ウエストパーク社労士事務所は、DX支援に特化した助成金の申請代行を通じて、中小企業の業務効率化と人材強化を力強くサポートいたします。お気軽にご相談ください。</p>
-            </div>
-        </section>
-
-        <!-- フッター -->
-        <footer class="py-8 border-t border-gray-200">
+        <section id="dx-examples" class="py-16 bg-gray-50">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <p class="text-sm text-gray-500">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p>
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center">支援できるDX導入の例</h3>
+                <div class="bg-white rounded-lg shadow-md overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left">課題</th>
+                                <th class="px-6 py-4 text-left">DXツール例</th>
+                                <th class="px-6 py-4 text-left">活用できる助成金</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">紙の勤怠管理が煩雑</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">クラウド勤怠管理システム</td>
+                                <td class="px-6 py-4 text-secondary">業務改善助成金</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 text-gray-700">給与計算に毎月時間がかかる</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">クラウド給与計算ソフト</td>
+                                <td class="px-6 py-4 text-secondary">業務改善助成金</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">社内の情報共有がバラバラ</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">ビジネスチャット・グループウェア</td>
+                                <td class="px-6 py-4 text-secondary">業務改善助成金</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 text-gray-700">従業員のITスキルが不足</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">AI・DX研修プログラム</td>
+                                <td class="px-6 py-4 text-secondary">人材開発助成金</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-gray-700">現場報告が手書き・FAX</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">タブレット＋報告アプリ</td>
+                                <td class="px-6 py-4 text-secondary">業務改善助成金</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 text-gray-700">カスハラ対応の記録管理</td>
+                                <td class="px-6 py-4 font-medium text-gray-800">相談管理システム</td>
+                                <td class="px-6 py-4 text-secondary">業務改善助成金</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+        </section>
+
+        <section id="construction" class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-primary text-white rounded-lg p-8">
+                    <h3 class="text-2xl font-bold mb-4">建設・不動産業の方へ</h3>
+                    <p class="text-blue-100 mb-6">人手不足、紙の書類、現場と事務所の情報断絶——建設業界ならではの課題に、助成金を活用したDXで応えます。</p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">報告書作成の自動化</h4>
+                            <p class="text-blue-100 text-sm">現場写真の管理・報告書作成の自動化で月20時間以上の削減事例も</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">タブレット導入</h4>
+                            <p class="text-blue-100 text-sm">現場からリアルタイムに情報共有。直行直帰にも対応</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h4 class="font-bold mb-2">クラウド勤怠管理</h4>
+                            <p class="text-blue-100 text-sm">直行直帰の労働時間を正確に把握。GPS打刻にも対応</p>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 mt-6 text-sm">建設業に精通したパートナーと連携し、現場の実情に合った提案をします。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dx-flow" class="py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center">DX導入の流れ</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">1</div>
+                        <div class="pt-2"><h4 class="font-bold text-lg text-gray-800 mb-1">現状ヒアリング</h4><p class="text-gray-600">業務フローの棚卸し。どこに非効率があるかを一緒に整理します。</p></div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">2</div>
+                        <div class="pt-2"><h4 class="font-bold text-lg text-gray-800 mb-1">DXプランの提案</h4><p class="text-gray-600">ツール選定＋助成金活用シミュレーション。導入コストと助成額の試算を提示します。</p></div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">3</div>
+                        <div class="pt-2"><h4 class="font-bold text-lg text-gray-800 mb-1">助成金申請</h4><p class="text-gray-600">計画策定・書類作成・提出を代行。申請の手間はかかりません。</p></div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">4</div>
+                        <div class="pt-2"><h4 class="font-bold text-lg text-gray-800 mb-1">ツール導入・研修サポート</h4><p class="text-gray-600">IT企業と連携し、導入から従業員向け研修までサポートします。</p></div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">5</div>
+                        <div class="pt-2"><h4 class="font-bold text-lg text-gray-800 mb-1">効果測定・実績報告</h4><p class="text-gray-600">導入効果を測定し、実績報告書を作成・提出。助成金の受給まで伴走します。</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">DXの第一歩を、助成金で踏み出しませんか？</h3>
+                <p class="text-gray-600 mb-8">「何から始めればいいかわからない」で大丈夫です。まずはお気軽にご相談ください。</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="diagnosis.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold text-lg transition shadow-lg">助成金簡易診断を受ける</a>
+                    <a href="contact.html" class="inline-block bg-primary hover:bg-blue-900 text-white px-8 py-4 rounded-md font-bold text-lg transition shadow-lg">無料相談を予約する</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-8 border-t border-gray-200 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center"><p class="text-sm text-gray-500">&copy; 2025 ウエストパーク社労士事務所. All rights reserved.</p></div>
             </div>
         </footer>
     </main>
 
     <script>
-        // モバイルサイドバーの開閉
         const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
-
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('-translate-x-full');
-            overlay.classList.toggle('hidden');
-        });
-
-        overlay.addEventListener('click', () => {
-            sidebar.classList.add('-translate-x-full');
-            overlay.classList.add('hidden');
-        });
-
-        // スムーススクロール
+        sidebarToggle.addEventListener('click', () => { sidebar.classList.toggle('-translate-x-full'); overlay.classList.toggle('hidden'); });
+        overlay.addEventListener('click', () => { sidebar.classList.add('-translate-x-full'); overlay.classList.add('hidden'); });
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); sidebar.classList.add('-translate-x-full'); overlay.classList.add('hidden'); }
             });
         });
     </script>
