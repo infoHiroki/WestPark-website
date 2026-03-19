@@ -185,6 +185,16 @@
             });
         });
 
+        // 診断結果の引き継ぎ
+        const urlParams = new URLSearchParams(window.location.search);
+        const diagnosisData = urlParams.get('diagnosis');
+        if (diagnosisData) {
+            const messageField = document.getElementById('message');
+            messageField.value = decodeURIComponent(diagnosisData);
+            const serviceField = document.getElementById('service');
+            serviceField.value = 'subsidy';
+        }
+
         // EmailJS初期化
         (function() { emailjs.init("YOUR_EMAILJS_USER_ID"); })();
 

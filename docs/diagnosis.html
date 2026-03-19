@@ -16,6 +16,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -60,27 +61,64 @@
         <section class="bg-primary text-white py-12">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold">助成金簡易診断</h2>
-                <p class="mt-4 text-lg">3分で御社に合った助成金がわかります</p>
+                <p class="mt-4 text-lg">9つの質問に答えるだけ。約3分で完了します</p>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="bg-accent/10 border-2 border-accent rounded-lg p-8 mb-8">
-                    <div class="text-5xl mb-4">🔍</div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">助成金簡易診断ツール</h3>
-                    <p class="text-gray-700 mb-2">現在、診断ツールを準備中です。</p>
-                    <p class="text-gray-700 mb-6">公開までもうしばらくお待ちください。</p>
-                    <p class="text-gray-600 text-sm">簡単な質問に答えるだけで、御社で活用できる助成金と概算額がわかる診断ツールを開発中です。</p>
+        <section class="py-12 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- プログレスバー -->
+                <div id="progress-section" class="mb-8">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span id="progress-label">質問 1 / 9</span>
+                        <span id="progress-percent">11%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div id="progress-bar" class="bg-secondary rounded-full h-3 transition-all duration-500" style="width: 11%"></div>
+                    </div>
                 </div>
 
-                <div class="bg-blue-50 rounded-lg p-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">今すぐ知りたい方は、無料相談をご利用ください</h3>
-                    <p class="text-gray-700 mb-6">「うちでも使える助成金はある？」——そんな素朴な疑問から、専門の社労士が丁寧にお答えします。</p>
-                    <a href="contact.html" class="inline-block bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold text-lg transition shadow-lg">
-                        無料相談を予約する
-                    </a>
+                <!-- 質問エリア -->
+                <div id="question-area">
+                    <!-- 質問はJSで動的に表示 -->
                 </div>
+
+                <!-- 連絡先入力（任意） -->
+                <div id="contact-step" class="hidden">
+                    <div class="bg-white rounded-lg shadow-md p-8 border-t-4 border-secondary">
+                        <h3 class="text-xl font-bold text-primary mb-2">診断結果の準備ができました</h3>
+                        <p class="text-gray-600 mb-6 text-sm">よろしければ、ご連絡先をお教えいただけますか？（任意）<br>ご入力いただくと、より詳しいご案内をお送りすることができます。</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">会社名</label>
+                                <input type="text" id="contact-company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="例：株式会社○○">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">お名前</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="例：山田太郎">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">メールアドレス</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="例：info@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">電話番号</label>
+                                <input type="tel" id="contact-phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="例：090-1234-5678">
+                            </div>
+                        </div>
+                        <button id="show-result-btn" class="mt-6 w-full bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold text-lg transition">
+                            診断結果を見る
+                        </button>
+                        <p class="text-xs text-gray-500 mt-3 text-center">※ 入力しなくても結果はご覧いただけます</p>
+                    </div>
+                </div>
+
+                <!-- 診断結果 -->
+                <div id="result-area" class="hidden">
+                    <!-- 結果はJSで動的に表示 -->
+                </div>
+
             </div>
         </section>
 
@@ -92,11 +130,365 @@
     </main>
 
     <script>
+        // サイドバー
         const sidebarToggle = document.getElementById('mobile-sidebar-toggle');
         const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
-        sidebarToggle.addEventListener('click', () => { sidebar.classList.toggle('-translate-x-full'); overlay.classList.toggle('hidden'); });
-        overlay.addEventListener('click', () => { sidebar.classList.add('-translate-x-full'); overlay.classList.add('hidden'); });
+        const sidebarOverlay = document.getElementById('overlay');
+        sidebarToggle.addEventListener('click', () => { sidebar.classList.toggle('-translate-x-full'); sidebarOverlay.classList.toggle('hidden'); });
+        sidebarOverlay.addEventListener('click', () => { sidebar.classList.add('-translate-x-full'); sidebarOverlay.classList.add('hidden'); });
+
+        // EmailJS初期化
+        (function() { emailjs.init("YOUR_EMAILJS_USER_ID"); })();
+
+        // 質問データ
+        const questions = [
+            {
+                id: 'employees',
+                title: '従業員数を教えてください',
+                subtitle: '役員を除く、雇用保険加入者の人数でお答えください',
+                type: 'select',
+                options: [
+                    { value: '1-9', label: '1〜9名' },
+                    { value: '10-29', label: '10〜29名' },
+                    { value: '30-49', label: '30〜49名' },
+                    { value: '50+', label: '50名以上' }
+                ]
+            },
+            {
+                id: 'industry',
+                title: '業種を教えてください',
+                subtitle: '最も近いものをお選びください',
+                type: 'select',
+                options: [
+                    { value: '建設・不動産', label: '建設・不動産' },
+                    { value: '製造', label: '製造' },
+                    { value: '小売・飲食', label: '小売・飲食' },
+                    { value: 'IT・サービス', label: 'IT・サービス' },
+                    { value: '医療・介護', label: '医療・介護' },
+                    { value: 'その他', label: 'その他' }
+                ]
+            },
+            {
+                id: 'non_regular',
+                title: 'パート・契約社員などの非正規社員はいますか？',
+                subtitle: '正社員以外の雇用形態の方が対象です',
+                type: 'yesno'
+            },
+            {
+                id: 'wage_raise',
+                title: '今後、賃上げを検討していますか？',
+                subtitle: '最低賃金の引き上げへの対応も含みます',
+                type: 'select',
+                options: [
+                    { value: 'はい', label: 'はい' },
+                    { value: 'いいえ', label: 'いいえ' },
+                    { value: '未定', label: '未定・検討中' }
+                ]
+            },
+            {
+                id: 'digitalization',
+                title: '業務のデジタル化に興味はありますか？',
+                subtitle: '勤怠管理・会計ソフト・タブレット導入など',
+                type: 'yesno'
+            },
+            {
+                id: 'training',
+                title: '社員研修や人材育成に取り組みたいですか？',
+                subtitle: 'DX研修・スキルアップ研修・資格取得支援など',
+                type: 'yesno'
+            },
+            {
+                id: 'workstyle',
+                title: '残業時間の削減や有給取得の促進に課題がありますか？',
+                subtitle: '働き方改革への取り組みが対象になります',
+                type: 'yesno'
+            },
+            {
+                id: 'elderly',
+                title: '60歳以上の従業員はいますか？',
+                subtitle: '定年制度の見直しや継続雇用に関する助成金があります',
+                type: 'yesno'
+            },
+            {
+                id: 'balance',
+                title: '育児や介護と仕事の両立に関する制度整備に関心がありますか？',
+                subtitle: '育休取得推進・介護休業・柔軟な働き方など',
+                type: 'yesno'
+            }
+        ];
+
+        // 助成金データ
+        const subsidies = {
+            gyomu_kaizen: {
+                name: '業務改善助成金',
+                supported: true,
+                estimate: '30万円〜600万円',
+                difficulty: '比較的シンプル',
+                difficultyColor: 'green',
+                description: '事業場内の最低賃金を引き上げ、生産性向上のための設備投資等を行う中小企業が対象です。',
+                action: '設備投資・DXツール導入の計画策定 → 当事務所が申請を代行します',
+                match: (a) => (a.wage_raise === 'はい' || a.wage_raise === '未定') || a.digitalization === 'はい'
+            },
+            career_up: {
+                name: 'キャリアアップ助成金',
+                supported: false,
+                estimate: '28.5万〜57万円（1人あたり）',
+                difficulty: '標準的',
+                difficultyColor: 'yellow',
+                description: '非正規社員の正社員化や処遇改善を行う事業主を支援する制度です。',
+                action: 'キャリアアップ計画の策定 → 管轄の労働局にご相談ください',
+                match: (a) => a.non_regular === 'はい'
+            },
+            jinzai: {
+                name: '人材開発支援助成金',
+                supported: true,
+                estimate: '経費の45〜75%助成＋賃金助成',
+                difficulty: 'やや手間がかかる',
+                difficultyColor: 'yellow',
+                description: '従業員の職業訓練・スキルアップ研修を実施する事業主を支援する制度です。DX人材育成にも活用できます。',
+                action: '訓練計画の策定・届出 → 当事務所が申請を代行します',
+                match: (a) => a.training === 'はい' || (a.digitalization === 'はい' && a.training !== 'いいえ')
+            },
+            hatarakikata: {
+                name: '働き方改革推進支援助成金',
+                supported: false,
+                estimate: '25万〜200万円',
+                difficulty: '標準的',
+                difficultyColor: 'yellow',
+                description: '労働時間の短縮、有給取得促進、勤務間インターバル導入等に取り組む中小企業を支援する制度です。',
+                action: '成果目標の設定・交付申請 → 管轄の労働局にご相談ください',
+                match: (a) => a.workstyle === 'はい'
+            },
+            koureisha: {
+                name: '65歳超雇用推進助成金',
+                supported: false,
+                estimate: '15万〜160万円',
+                difficulty: '標準的',
+                difficultyColor: 'yellow',
+                description: '定年引き上げ・継続雇用制度の導入など、高年齢者の雇用促進に取り組む事業主を支援する制度です。',
+                action: '就業規則の見直し → 管轄の労働局にご相談ください',
+                match: (a) => a.elderly === 'はい'
+            },
+            ryoritsu: {
+                name: '両立支援等助成金',
+                supported: false,
+                estimate: '20万〜60万円（コースにより異なる）',
+                difficulty: 'やや手間がかかる',
+                difficultyColor: 'yellow',
+                description: '育児休業の取得推進、介護離職の防止、柔軟な働き方の導入など、仕事と家庭の両立を支援する制度です。',
+                action: '就業規則の整備・制度導入 → 管轄の労働局にご相談ください',
+                match: (a) => a.balance === 'はい'
+            }
+        };
+
+        // 状態管理
+        let currentStep = 0;
+        const answers = {};
+
+        // 質問を表示
+        function renderQuestion(index) {
+            const q = questions[index];
+            const area = document.getElementById('question-area');
+            const total = questions.length;
+            const pct = Math.round(((index + 1) / total) * 100);
+            document.getElementById('progress-label').textContent = `質問 ${index + 1} / ${total}`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-bar').style.width = `${pct}%`;
+
+            let optionsHTML = '';
+            if (q.type === 'yesno') {
+                optionsHTML = `
+                    <div class="grid grid-cols-2 gap-4">
+                        <button data-value="はい" class="answer-btn bg-white border-2 border-gray-300 hover:border-secondary hover:bg-blue-50 rounded-lg py-4 px-6 text-lg font-bold text-gray-700 transition">はい</button>
+                        <button data-value="いいえ" class="answer-btn bg-white border-2 border-gray-300 hover:border-secondary hover:bg-blue-50 rounded-lg py-4 px-6 text-lg font-bold text-gray-700 transition">いいえ</button>
+                    </div>`;
+            } else {
+                optionsHTML = `<div class="grid gap-3">${q.options.map(o =>
+                    `<button data-value="${o.value}" class="answer-btn bg-white border-2 border-gray-300 hover:border-secondary hover:bg-blue-50 rounded-lg py-4 px-6 text-left text-lg font-medium text-gray-700 transition">${o.label}</button>`
+                ).join('')}</div>`;
+            }
+
+            area.innerHTML = `
+                <div class="bg-white rounded-lg shadow-md p-8 border-t-4 border-primary">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">${q.title}</h3>
+                    <p class="text-sm text-gray-500 mb-6">${q.subtitle}</p>
+                    ${optionsHTML}
+                    ${index > 0 ? '<button id="back-btn" class="mt-6 text-sm text-gray-500 hover:text-primary transition">← 前の質問に戻る</button>' : ''}
+                </div>`;
+
+            // イベント
+            area.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    answers[q.id] = btn.dataset.value;
+                    btn.classList.remove('border-gray-300');
+                    btn.classList.add('border-secondary', 'bg-blue-50');
+                    setTimeout(() => {
+                        if (currentStep < questions.length - 1) {
+                            currentStep++;
+                            renderQuestion(currentStep);
+                            area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        } else {
+                            showContactStep();
+                        }
+                    }, 300);
+                });
+            });
+
+            const backBtn = area.querySelector('#back-btn');
+            if (backBtn) {
+                backBtn.addEventListener('click', () => {
+                    currentStep--;
+                    renderQuestion(currentStep);
+                });
+            }
+        }
+
+        // 連絡先入力ステップ
+        function showContactStep() {
+            document.getElementById('question-area').classList.add('hidden');
+            document.getElementById('progress-section').classList.add('hidden');
+            document.getElementById('contact-step').classList.remove('hidden');
+            document.getElementById('contact-step').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // 結果表示ボタン
+        document.getElementById('show-result-btn').addEventListener('click', () => {
+            const contactInfo = {
+                company: document.getElementById('contact-company').value,
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                phone: document.getElementById('contact-phone').value
+            };
+
+            // EmailJS通知
+            sendNotification(contactInfo);
+
+            document.getElementById('contact-step').classList.add('hidden');
+            showResults();
+        });
+
+        // EmailJS通知
+        function sendNotification(contactInfo) {
+            const matched = Object.values(subsidies).filter(s => s.match(answers));
+            const matchedNames = matched.map(s => s.name).join('、');
+            const answersText = questions.map(q => `${q.title}: ${answers[q.id]}`).join('\n');
+
+            const templateParams = {
+                name: contactInfo.name || '（未入力）',
+                company: contactInfo.company || '（未入力）',
+                email: contactInfo.email || '（未入力）',
+                phone: contactInfo.phone || '（未入力）',
+                message: `【助成金簡易診断の結果】\n\n■ 該当した助成金\n${matchedNames || 'なし'}\n\n■ 回答内容\n${answersText}`
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams).catch(() => {});
+        }
+
+        // 結果表示
+        function showResults() {
+            const area = document.getElementById('result-area');
+            area.classList.remove('hidden');
+
+            const matched = Object.values(subsidies).filter(s => s.match(answers));
+            const supported = matched.filter(s => s.supported);
+            const notSupported = matched.filter(s => !s.supported);
+
+            let html = `
+                <div class="mb-8 text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/20 mb-4">
+                        <span class="text-3xl">📊</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">診断結果</h3>
+                    <p class="text-lg text-primary font-bold">${matched.length}件の助成金が活用できる可能性があります</p>
+                </div>`;
+
+            if (supported.length > 0) {
+                html += `<div class="mb-6"><h4 class="text-lg font-bold text-primary mb-4 flex items-center gap-2"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs">✓</span>当事務所でサポートできる助成金</h4>`;
+                supported.forEach(s => { html += renderSubsidyCard(s, true); });
+                html += `</div>`;
+            }
+
+            if (notSupported.length > 0) {
+                html += `<div class="mb-6"><h4 class="text-lg font-bold text-gray-700 mb-4">その他、対象の可能性がある助成金</h4>`;
+                notSupported.forEach(s => { html += renderSubsidyCard(s, false); });
+                html += `</div>`;
+            }
+
+            if (matched.length === 0) {
+                html += `
+                    <div class="bg-gray-50 rounded-lg p-8 text-center mb-8">
+                        <p class="text-gray-700 mb-4">今回の回答内容では、該当する助成金が見つかりませんでした。</p>
+                        <p class="text-gray-600 text-sm">ただし、実際にはご状況に応じて活用できる制度がある場合もあります。<br>お気軽にご相談ください。</p>
+                    </div>`;
+            }
+
+            // CTA
+            const answersParam = encodeURIComponent(buildContactMessage(matched));
+            html += `
+                <div class="bg-blue-50 rounded-lg p-8 text-center mt-8">
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">詳しく相談してみませんか？</h4>
+                    <p class="text-gray-700 mb-6 text-sm">診断結果をもとに、専門の社労士が具体的な活用プランをご提案します。<br>初回相談は無料です。</p>
+                    <a href="contact.html?diagnosis=${answersParam}" class="inline-block bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-md font-bold text-lg transition shadow-lg">
+                        診断結果をもとに無料相談する
+                    </a>
+                    <button id="retry-btn" class="block mx-auto mt-4 text-sm text-gray-500 hover:text-primary transition">もう一度診断する</button>
+                </div>`;
+
+            area.innerHTML = html;
+            area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            document.getElementById('retry-btn').addEventListener('click', () => {
+                location.reload();
+            });
+        }
+
+        function renderSubsidyCard(s, isSupported) {
+            const diffColors = { green: 'bg-green-100 text-green-800', yellow: 'bg-yellow-100 text-yellow-800' };
+            const borderClass = isSupported ? 'border-l-4 border-primary' : 'border-l-4 border-gray-300';
+            const note = isSupported ? '' : `<p class="text-xs text-gray-500 mt-3">※ 当事務所では現在取り扱っておりません。詳しくは管轄の労働局等にご確認ください。</p>`;
+
+            return `
+                <div class="bg-white rounded-lg shadow-md p-6 mb-4 ${borderClass}">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <h5 class="text-lg font-bold text-gray-800">${s.name}</h5>
+                        ${isSupported ? '<span class="text-xs font-bold bg-primary text-white px-2 py-1 rounded">サポート対応</span>' : ''}
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4">${s.description}</p>
+                    <div class="grid sm:grid-cols-3 gap-3 text-sm">
+                        <div class="bg-gray-50 rounded p-3">
+                            <p class="text-gray-500 text-xs mb-1">概算受給額</p>
+                            <p class="font-bold text-primary">${s.estimate}</p>
+                        </div>
+                        <div class="bg-gray-50 rounded p-3">
+                            <p class="text-gray-500 text-xs mb-1">申請の手間</p>
+                            <p class="font-bold"><span class="inline-block px-2 py-0.5 rounded text-xs ${diffColors[s.difficultyColor]}">${s.difficulty}</span></p>
+                        </div>
+                        <div class="bg-gray-50 rounded p-3">
+                            <p class="text-gray-500 text-xs mb-1">次のステップ</p>
+                            <p class="font-bold text-gray-700 text-xs">${s.action}</p>
+                        </div>
+                    </div>
+                    ${note}
+                </div>`;
+        }
+
+        function buildContactMessage(matched) {
+            let msg = '【助成金簡易診断からのお問い合わせ】\n\n';
+            msg += '■ 該当した助成金\n';
+            if (matched.length > 0) {
+                matched.forEach(s => { msg += `・${s.name}${s.supported ? '（サポート対応）' : ''}\n`; });
+            } else {
+                msg += '該当なし\n';
+            }
+            msg += '\n■ 回答内容\n';
+            questions.forEach(q => {
+                msg += `${q.title}: ${answers[q.id]}\n`;
+            });
+            return msg;
+        }
+
+        // 初期化
+        renderQuestion(0);
     </script>
 </body>
 </html>
