@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ウエストパーク社労士事務所 | 福岡・北九州 | 助成金×DXで賃上げと生産性向上を両立</title>
     <meta name="description" content="助成金×DXで中小企業の賃上げと生産性向上を両立。業務改善助成金・人材開発助成金の申請代行からDXツール導入まで、ワンストップでサポートする福岡の社労士事務所。">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="ウエストパーク社労士事務所">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="ウエストパーク社労士事務所">
+    <link rel="canonical" href="https://westpark-sr.jp/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 
+    <!-- Preconnect -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+
     <!-- OGP Tags -->
     <meta property="og:title" content="ウエストパーク社労士事務所 | 助成金×DXで賃上げと生産性向上を両立">
     <meta property="og:description" content="助成金×DXで中小企業の賃上げと生産性向上を両立。申請代行からDXツール導入まで、ワンストップでサポートする福岡の社労士事務所。">
-    <meta property="og:image" content="https://hirokitakamura.github.io/WestPark-website/images/ogp.png">
-    <meta property="og:url" content="https://hirokitakamura.github.io/WestPark-website/">
+    <meta property="og:image" content="https://westpark-sr.jp/images/ogp.png">
+    <meta property="og:url" content="https://westpark-sr.jp/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -31,17 +40,89 @@
             }
         }
     </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "ウエストパーク社労士事務所",
+        "alternateName": "WestPark Social Insurance and Labor Consultant Office",
+        "url": "https://westpark-sr.jp/",
+        "logo": "https://westpark-sr.jp/images/logo.png",
+        "image": "https://westpark-sr.jp/images/ogp.png",
+        "description": "助成金×DXで中小企業の賃上げと生産性向上を両立。業務改善助成金・人材開発助成金の申請代行からDXツール導入まで、ワンストップでサポートする福岡の社労士事務所。",
+        "telephone": "080-3948-2324",
+        "email": "westpark-sr@gmail.com",
+        "founder": {
+            "@type": "Person",
+            "name": "野口 聡",
+            "jobTitle": "特定社会保険労務士"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "福岡県",
+            "addressLocality": "北九州市",
+            "addressCountry": "JP"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 33.8834,
+            "longitude": 130.8752
+        },
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "北九州市"
+            },
+            {
+                "@type": "City",
+                "name": "福岡市"
+            },
+            {
+                "@type": "Country",
+                "name": "日本",
+                "description": "オンライン対応で全国対応可能"
+            }
+        ],
+        "serviceType": ["助成金申請代行", "DX導入支援", "労務顧問", "就業規則作成", "助成金簡易診断"],
+        "priceRange": "着手金無料・成功報酬型",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://westpark-sr.jp/"
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="bg-gray-50">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-primary focus:rounded-md focus:shadow-lg">メインコンテンツへスキップ</a>
+
     <!-- モバイルメニューボタン（固定） -->
-    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg">
+    <button id="mobile-sidebar-toggle" class="lg:hidden fixed top-4 left-4 z-50 bg-primary text-white p-3 rounded-md shadow-lg" aria-label="メニューを開く" aria-expanded="false" aria-controls="sidebar">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
     </button>
 
     <!-- サイドバー -->
-    <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+    <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300" role="navigation" aria-label="メインナビゲーション">
         <!-- ロゴ -->
         <div class="p-6 border-b border-gray-200">
             <a href="index.html">
@@ -50,7 +131,7 @@
         </div>
 
         <!-- ナビゲーション -->
-        <nav class="p-4">
+        <nav class="p-4" aria-label="サイトメニュー">
             <ul class="space-y-2">
                 <li><a href="index.html" class="block px-4 py-2 rounded-md bg-blue-50 text-primary font-medium">ホーム</a></li>
                 <li><a href="services.html" class="block px-4 py-2 rounded-md hover:bg-gray-50 text-gray-700 hover:text-primary transition">助成金申請サポート</a></li>
@@ -79,7 +160,7 @@
     <div id="overlay" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
 
     <!-- メインコンテンツ -->
-    <main class="lg:ml-64">
+    <main id="main-content" class="lg:ml-64">
 
         <!-- ヒーローセクション -->
         <section class="relative bg-cover bg-center min-h-[28rem] flex items-center" style="background-image: url('images/nishi-park-sakura.jpg');">
@@ -278,11 +359,13 @@
         sidebarToggle.addEventListener('click', () => {
             sidebar.classList.toggle('-translate-x-full');
             overlay.classList.toggle('hidden');
+            sidebarToggle.setAttribute('aria-expanded', !sidebar.classList.contains('-translate-x-full'));
         });
 
         overlay.addEventListener('click', () => {
             sidebar.classList.add('-translate-x-full');
             overlay.classList.add('hidden');
+            sidebarToggle.setAttribute('aria-expanded', 'false');
         });
 
         // スムーススクロール

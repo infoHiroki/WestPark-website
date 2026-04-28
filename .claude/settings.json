@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:fukuoka-sr.com)",
+      "WebFetch(domain:www.hrpsr.jp)",
+      "WebFetch(domain:sharoushi-pro.com)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx wrangler:*)",
+      "Bash(npm install:*)",
+      "Bash(where node:*)",
+      "Bash(where npm:*)",
+      "Bash(where npx:*)",
+      "Bash(npm --version)",
+      "Bash(\"/c/Program Files/nodejs/npm\" --version)",
+      "Bash(\"/c/Program Files \\(x86\\)/nodejs/npm\" --version)",
+      "Bash(\"/c/Program Files/nodejs/npm\" install -g wrangler)"
+    ]
+  }
+}
