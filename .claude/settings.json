@@ -15,7 +15,9 @@
       "Bash(npm --version)",
       "Bash(\"/c/Program Files/nodejs/npm\" --version)",
       "Bash(\"/c/Program Files \\(x86\\)/nodejs/npm\" --version)",
-      "Bash(\"/c/Program Files/nodejs/npm\" install -g wrangler)"
+      "Bash(\"/c/Program Files/nodejs/npm\" install -g wrangler)",
+      "Bash(git fetch *)",
+      "Bash(Get-Content .gitignore -ErrorAction SilentlyContinue)"
     ]
   }
 }
